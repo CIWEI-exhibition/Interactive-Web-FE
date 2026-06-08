@@ -1,8 +1,7 @@
 import { Link, useLocation } from 'react-router-dom'
 
-const NAV_ITEMS = [
+const REACT_NAV = [
   { path: '/', label: 'EXHIBITION' },
-  { path: '/goods', label: 'GOODS' },
   { path: '/memo', label: 'MEMO' },
 ]
 
@@ -17,7 +16,7 @@ export default function NavBar() {
         AQUAURORE
       </Link>
       <ul className="flex items-center gap-8">
-        {NAV_ITEMS.map((item) => (
+        {REACT_NAV.map((item) => (
           <li key={item.path}>
             <Link
               to={item.path}
@@ -29,6 +28,14 @@ export default function NavBar() {
             </Link>
           </li>
         ))}
+        <li>
+          <a
+            href="/Goods_Page/goods.html"
+            className="text-xs tracking-widest text-white/40 hover:text-white/70 transition-colors"
+          >
+            GOODS
+          </a>
+        </li>
       </ul>
     </nav>
   )
