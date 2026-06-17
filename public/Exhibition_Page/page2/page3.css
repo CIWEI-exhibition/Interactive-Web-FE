@@ -1,0 +1,268 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0; 
+    font-family: 'Baloo Chettan 2', cursive;
+}
+
+/* 아래부터가 2페이지 시작! */
+
+/* 스크롤 없애기 */
+body{
+    -ms-overflow-style: none;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+
+@media (max-width: 1280px){     /*모바일 일단 포함, pc(13인치)*/
+    .scroll-icon{
+        position: absolute;
+        height: auto;
+        margin: -34% 0 0 45%;
+        opacity: 0;
+        -webkit-animation:blinks 7s ease-in-out; 
+        -moz-animation:blinks 7s ease-in-out; 
+        animation:blinks 7s ease-in-out;
+    }
+    
+    .click-icon{
+        position: absolute;
+        margin: 58% 0 0 54%;
+        opacity: 0;
+        -webkit-animation:blink 7s ease-in-out infinite; 
+        -moz-animation:blink 7s ease-in-out infinite; 
+        animation:blink 7s ease-in-out infinite;
+    }
+}
+
+@media (min-width: 1281px) and (max-width: 1440px){     /*pc 2*/
+    .scroll-icon{
+        position: absolute;
+        height: auto;
+        margin: -34% 0 0 45%;
+        opacity: 0;
+        -webkit-animation:blinks 7s ease-in-out; 
+        -moz-animation:blinks 7s ease-in-out; 
+        animation:blinks 7s ease-in-out;
+    }
+    
+    .click-icon{
+        position: absolute;
+        margin: 58% 0 0 54%;
+        opacity: 0;
+        -webkit-animation:blink 7s ease-in-out infinite; 
+        -moz-animation:blink 7s ease-in-out infinite; 
+        animation:blink 7s ease-in-out infinite;
+    }
+}
+
+@media (min-width: 1440px) and (max-width: 1900px){     /*pc 3(15인치)*/
+    .scroll-icon{
+        position: absolute;
+        height: auto;
+        margin: -31% 0 0 45%;
+        opacity: 0;
+        -webkit-animation:blinks 7s ease-in-out; 
+        -moz-animation:blinks 7s ease-in-out; 
+        animation:blinks 7s ease-in-out;
+    }
+    
+    .click-icon{
+        position: absolute;
+        margin: 58% 0 0 54%;
+        opacity: 0;
+        -webkit-animation:blink 7s ease-in-out infinite; 
+        -moz-animation:blink 7s ease-in-out infinite; 
+        animation:blink 7s ease-in-out infinite;
+    }
+}
+
+@media (min-width: 1900px){     /*pc 4(완전 와이드스크린)*/
+    .scroll-icon{
+        position: absolute;
+        height: auto;
+        margin: -24% 0 0 42%;
+        opacity: 0;
+        -webkit-animation:blinks 7s ease-in-out; 
+        -moz-animation:blinks 7s ease-in-out; 
+        animation:blinks 7s ease-in-out;
+    }
+    
+    .click-icon{
+        position: absolute;
+        margin: 58% 0 0 54%;
+        opacity: 0;
+        -webkit-animation:blink 7s ease-in-out infinite; 
+        -moz-animation:blink 7s ease-in-out infinite; 
+        animation:blink 7s ease-in-out infinite;
+    }
+}
+
+@-webkit-keyframes blinks{
+    0% {opacity:0;}
+    15%{opacity: 1;}
+    30%{opacity: 0;}
+    45%{opacity: 1;}
+    60%{opacity: 0;}
+    75%{opacity: 1;}
+    90%{opacity: 0;}
+    100% {opacity:0;} 
+} 
+
+@-moz-keyframes blinks{
+    0% {opacity:0;}
+    15%{opacity: 1;}
+    30%{opacity: 0;}
+    45%{opacity: 1;}
+    60%{opacity: 0;}
+    75%{opacity: 1;}
+    90%{opacity: 0;}
+    100% {opacity:0;} 
+} 
+
+@keyframes blinks{
+    0% {opacity:0;}
+    15%{opacity: 1;}
+    30%{opacity: 0;}
+    45%{opacity: 1;}
+    60%{opacity: 0;}
+    75%{opacity: 1;}
+    90%{opacity: 0;}
+    100% {opacity:0;} 
+}
+
+/* 이미지 배치 */
+.wrapper{
+    display: flex;
+    position: relative;
+    min-height: 500px;
+}
+
+.wrapper .bg{
+    overflow: hidden;
+}
+
+.img{
+    position: absolute;
+}
+
+.wrapper .small_wrapper .bgWall{
+    position: absolute;
+    margin: 20% 0 0 23%;
+}
+
+.wrapper .small_wrapper .bgInterior{
+    position: absolute;
+    margin: 20% 0 0 0;
+}
+
+.wrapper .small_wrapper .desk{
+    position: absolute;
+    margin: 34.2% 0 0 20%;
+}
+
+.wrapper .small_wrapper .deskClock{
+    position: absolute;
+    margin: 49% 0 0 25.5%;
+}
+
+.wrapper .small_wrapper .com{
+    position: absolute;
+    margin: 40.8% 0 0 39%;
+}
+
+.wrapper .small_wrapper .comLogo{
+    position: absolute;
+    margin: 57% 0 0 50%;
+    animation: dongdong 2s ease-in-out infinite alternate;
+}
+
+/* .wrapper .small_wrapper .comMonitor2{
+    position: absolute;
+    margin: 41% 0 0 39.1%;
+    -webkit-animation:blink 4s ease-in-out infinite alternate; 
+    -moz-animation:blink 4s ease-in-out infinite alternate; 
+    animation:blink 4s ease-in-out infinite alternate; 
+} */
+
+.wrapper .small_wrapper .comChair{
+    position: absolute;
+    margin: 62.5% 0 0 39.5%;
+}
+
+.wrapper .small_wrapper .standLight{
+    position: absolute;
+    margin: 36% 0 0 35.5%;
+    opacity: 0.7;
+    -webkit-animation:blink 0.7s ease-in-out infinite alternate; 
+    -moz-animation:blink 0.7s ease-in-out infinite alternate; 
+    animation:blink 0.7s ease-in-out infinite alternate; 
+}
+
+.wrapper .small_wrapepr .fgMoonlight{
+    position: absolute;
+}
+
+.wrapper .small_wrapper .fgMonitor{
+    position: absolute;
+    margin: 40.7% 0 0 39.1%;
+    opacity: 0;
+}
+
+/*세로 진행 바 시작*/
+/* .progress {
+    position: fixed;
+    width: 4px;
+    height: 140px;
+    top: 40%;
+    right: 10px;
+    background-color: black;
+    z-index: 10;
+}
+.bar{
+    position: absolute;
+    width: 4px;
+    height: 140px;
+    top: 0;
+    right: 0;
+    background-color: chartreuse;
+    z-index: 11;
+} */
+/*세로 진행 바 끝*/
+
+/*동동 애니메이션*/
+@keyframes dongdong{
+    0%{ 
+        transform:translate(-50%, -40%);
+        opacity: 0; 
+    } 
+    50%{
+        transform:translate(-50%,-60%); 
+    }
+    100%{
+        transform:translate(-50%, -40%);
+        opacity: 1;
+    }
+}
+
+/*깜빡이는 애니메이션*/
+@-webkit-keyframes blink{
+    0% {opacity:0;} 
+    100% {opacity:1;} 
+} 
+
+@-moz-keyframes blink{
+    0% {opacity:0;} 
+    100% {opacity:1;} 
+} 
+
+@keyframes blink{
+    0% {opacity:0;} 
+    100% {opacity:1;} 
+}
+
+/*물결 효과*/

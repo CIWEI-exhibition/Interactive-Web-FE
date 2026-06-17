@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: whitesmoke;   /*전체색상 */
+}
+
+@font-face {
+    src: url("../../NanumSquareR.otf");
+    font-family: "NanumSquare";
+}
+
+.navbar {   /*내비게이션 바(로고+메뉴)*/
+    background-color: rgb(228, 228, 228);
+    height: 120px;
+    padding: 0 50px;
+    position: sticky;   /*상단바 고정*/
+    padding-top: 60px;  /*자연스럽게 줄어들기*/
+    top: -60px;
+    opacity: 0.7;   /*뒤에 비치게 하기*/
+    backdrop-filter: blur(30px);
+}
+
+.navbar #menu {   /*메뉴*/
+    float: right;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar #menu:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.navbar #menu li {
+    padding: 0 20px;    /*hover때문에 간격 줌*/
+    cursor: pointer;
+    float: left;
+    line-height: 60px;
+}
+.navbar #menu li:not(:last-child) {     /*메뉴 간 간격 띄우기*/
+    margin-right: 40px;
+}
+
+.navbar #menu li:hover {    /*마우스 커서 올리면 gray색*/
+    background-color: gray;
+}
+
+.navbar #menu li a {    /*메뉴이름 속성*/
+    color: black;
+    font-family: "NanumSquare";
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* 여기까지 navbar */
+/* 아래가 본격 상세페이지! */
+
+.detail{
+    width: 1245px;
+    margin: 150px auto 150px auto;
+}
+
+.header{
+    overflow: auto;         /* 꿀팁!! 부모 div가 자식 div를 감싸지 않을때 쓰는 코드! */
+    color: black;
+    font-family: "NanumSquare";
+    margin-bottom: 50px;
+}
+
+.big-image{
+    float: left;
+    width: 600px;
+    margin-right: 130px;
+}
+
+.semi-header{
+    float: left;
+    font-family: "NanumSquare";
+    font-size: 24px;
+    font-weight: 500
+}
+
+.semi-header .price{
+    margin: 20px 0 20px 0;
+}
+
+.semi-header .subtitle{
+    margin: 15px 0 30px 0;
+    font-family: "NanumSquare";
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.semi-header .btn:not(:last-child){
+    margin-right: 1px;
+    padding: 15px 49px 15px 49px;
+}
+
+.semi-header .heart{
+    padding: 15px 73px 15px 73px;
+}
+.clearfix{
+    clear: both;
+}
+
+/* 여기까지 header(맨 위 구매정보 등) */
+/* 여기서부터 툴바 */
+
+.link-container .btn-outline-primary{
+    font-family: "NanumSquare";
+    color: black;
+    border-color: black;
+    padding: 15px 182px;
+}
+
+.link-container .btn-outline-primary:hover{
+    background-color: black;
+    color: white;
+}

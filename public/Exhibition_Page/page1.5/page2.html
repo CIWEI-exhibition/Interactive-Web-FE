@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" class=".no-skrollr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="page2.css">
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap" rel="stylesheet">
+    
+    <title>Part2.지하철 안</title>
+
+    <script src="https://kit.fontawesome.com/10f8dabd1b.js" crossorigin="anonymous"></script>
+    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>        <!--트윈맥스-->
+    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollToPlugin.min.js"></script>    <!--트윈맥스. scrolltoplugin--><!--jQuery-->
+    <!-- <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js?ver=1.3.2'></script>        가로스크롤 플러그인(jQuery)
+    <script type='text/javascript' src='/js/jquery.mousewheel.min.js'></script>-->
+ 
+    <script  src="../js/jquery-3.6.0.js"></script>
+    <script type='text/javascript' src='https://deanoakley.com/assets/js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+	<script type='text/javascript' src='https://deanoakley.com/assets/js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+    <script type='text/javascript' src='https://deanoakley.com/assets/themes/deanoakley/jquery.mousewheela07c.js?ver=4.6.11'></script>
+		<script type="text/javascript">
+
+		    jQuery(document).ready(function($) {
+
+		        $("html, body, *").mousewheel(function(event, delta) {
+		        this.scrollLeft -= (delta * 20);
+		        });
+
+			    jQuery(".scroll").click(function(event){
+				    event.preventDefault();
+
+				    if( $(window).width() > 1024 ){
+					    jQuery('html,body').animate({scrollLeft:$(this.hash).offset().left}, 500);
+				    }
+				    else{
+					    jQuery('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
+				    }
+			    });
+		    });
+	    </script>
+
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <img src="images4/bg.png" alt="배경" class="img bg" id="bg" />
+       
+        <div class="small_wrapper">
+            <img src="images4/bg3(star).png" alt="배경-3(star)" class="img bg-3" id="bg-3" />
+            <img src="images4/shootingstar.png" alt="배경-별똥별" class="img bg-shooting" id="bg-shooting" />
+            <img src="images4/moon.png" alt="배경-달" class="img bg-moon" id="bg-moon" />
+            <img src="images4/bg1.png" alt="배경-1" class="img bg-1" id="bg-1" />
+            
+            <img src="images4/train.png" alt="앞-기차" class="img train" id="train" /> 
+            <img src="images4/bg2_1.png" alt="배경-2" class="img bg-2" id="bg-2" />
+
+            <img src="images4/building.png" alt="앞-건물" class="img building" id="building" />
+            <img src="images3/bg/bgMoonLight.png" alt="배경-달빛" class="img bg-moonlight" id="bg-moonlight" />
+        </div>
+        <div class="front_wrapper">
+            <img src="images4/subway.png" alt="지하철" class="sub subway" id="subway" />
+
+            <img src="images3/subway/SubHandle1.png" alt="지하철-손잡이" class="sub handle1" id="subway-handle1" />
+            <img src="images3/subway/SubHandle2.png" alt="지하철-손잡이" class="sub handle2" id="subway-handle2" />
+            <img src="images3/subway/SubHandle3.png" alt="지하철-손잡이" class="sub handle3" id="subway-handle3" />
+            <img src="images3/subway/SubHandle4.png" alt="지하철-손잡이" class="sub handle4" id="subway-handle4" />
+            <img src="images4/seat.png" alt="지하철-자리" class="sub seat" id="subway-seat" />
+            <!-- <img src="images4/fadeout.png" alt="앞-페이드아웃" class="img fade-out" id="fade-out" /> -->
+        </div>
+        <div class="chat_wrapper">
+            <img src="images3/chat/chat_bottom.png" alt="채팅-글적는 칸" class="chatting" id="chat_bottom" width="25%">
+            <img src="images3/chat/chat1.png" alt="채팅-1" class="chat up" id="chat_1" width="12%"></div>
+            <img src="images3/chat/chat2.png" alt="채팅-2" class="chat up" id="chat_2" width="21%"></div>
+            <img src="images3/chat/chat3.png" alt="채팅-3" class="chat up" id="chat_3" width="17%"></div>
+            <img src="images3/chat/chat4.png" alt="채팅-4" class="chat up" id="chat_4" width="17%"></div>
+            <img src="images3/chat/chat5.png" alt="채팅-5" class="chat up" id="chat_5" width="13%"></div>
+            <img src="images3/chat/chat6.png" alt="채팅-6" class="chat up" id="chat_6" width="19%"></div>
+            <img src="images3/chat/my_chat.png" alt="채팅-내 글" class="chat up" id="my_chat" width="6%"></div>
+
+            <!-- <img src="images3/front/Full-Fade-out.png" alt="전체-페이드아웃" class="fade" id="full-fade-out" width="100%"> -->
+        </div>
+        
+        <!-- <p class="typing-txt">또 나만.. 아직이네..</p>
+        <p class="typing"></p> -->
+
+        <div class="scroll">
+            <img src="../scroll-image/scroll-side(black).png" alt="옆으로 스크롤" class="scroll-icon" id="scroll-side" width="10%">
+        </div>
+        
+    </div>
+    <!--툴팁-->
+   <div class="exit">
+        <a href="../../Main_Page/entrance.html"><i class="fas fa-arrow-right fa-3x"></i>
+        <div class="tooltip">
+            <h1 class="text" id="text">전시장으로 돌아가기</h1>
+        </div>
+    </div>
+    
+    <script type='text/javascript' src="page2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>   <!--for 음원. internet explorer에서는 적용 안됨-->
+    <script src='https://cdn.rawgit.com/admsev/jquery-play-sound/master/jquery.playSound.js'></script>
+</body>
+</html>

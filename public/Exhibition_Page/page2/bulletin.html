@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link href="bulletin.css" rel="stylesheet">
+
+	<title>[과제]자기소개서 쓰기</title>
+
+	<script src="https://kit.fontawesome.com/10f8dabd1b.js" crossorigin="anonymous"></script>
+	 <!--Google Fonts-->
+	 <link rel="preconnect" href="https://fonts.googleapis.com">
+	 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap" rel="stylesheet">
+	<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div id="wrapper" class="wrapper">
+        <img src="images/pop/bulletin.png" alt="과제-배경" class="img bg" id="bg" width="100%" />
+		
+		<div class="small_wrapper">
+				<img src="images/pop/submit.png" alt="제출" class="img submit" id="submit" width="7%" onClick="setTimeout(errors, 1000)" />
+			
+			<article>
+				<form name="form" id="form" role="form" method="post" action="${pageContext.request.contextPath}/board/saveBoard">
+				
+					<div class="mb-3">
+						<p>본인 성격의 강점 및 단점은 무엇인가요?</p>
+						<label for="content"></label>
+						<textarea class="form-control" rows="3" name="content" id="content" placeholder="내용을 입력해 주세요." ></textarea>
+					</div>
+				
+					<div class="mb-3">
+						<p>이루고 싶은 목표는 무엇인가요?</p>
+						<label for="content"></label>
+						<textarea class="form-control" rows="3" name="content" id="content" placeholder="내용을 입력해 주세요." ></textarea>
+					</div>
+				</form>
+			</article>
+		</div>
+
+		<div id="error" class="pop">
+			<img src="images/pop/오류1.png" alt="오류1" class="img error" id="error1" width="20%">
+			<img src="images/pop/오류2.png" alt="오류2" class="img error" id="error2" width="20%">
+			<img src="images/pop/오류3.png" alt="오류3" class="img error" id="error3" width="20%">
+			<img src="images/pop/오류4.png" alt="오류4" class="img error" id="error4" width="20%">
+			<img src="images/pop/오류5.png" alt="오류5" class="img error" id="error5" width="20%">
+			<img src="images/pop/오류6.png" alt="오류6" class="img error" id="error6" width="20%">
+			<img src="images/pop/오류7.png" alt="오류7" class="img error" id="error7" width="20%">
+			<img src="images/pop/오류8.png" alt="오류8" class="img error" id="error8" width="20%">
+			<img src="images/pop/오류9.png" alt="오류9" class="img error" id="error9" width="20%">
+		</div>
+		
+		<!--물결효과-->
+		<div id="box" class="box">
+			<div class="wave -one"></div>
+			<div class="wave -two"></div>
+			<div class="wave -three"></div>
+		</div>
+
+	<!-- <script>
+		$(document).on('click', '#btnSave', function(e){
+			e.preventDefault();
+			$("#form").submit();
+		});
+	
+		$(document).on('click', '#btnList', function(e){
+			e.preventDefault();
+			location.href="${pageContext.request.contextPath}/board/getBoardList";
+		});
+	</script> -->
+	</div>
+
+	<!--툴팁-->
+    <div class="exit">
+        <a href="../../Main_Page/entrance.html"><i class="fas fa-arrow-right fa-3x"></i>
+        <div class="tooltip">
+            <h1 class="text" id="text">전시장으로 돌아가기</h1>
+        </div>
+    </div>
+
+	<script src="jquery-3.6.0.js"></script>
+	<script type="text/javascript" src="bulletin.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>   <!--for 음원. internet explorer에서는 적용 안됨-->
+</body>
+</body>
+</html>

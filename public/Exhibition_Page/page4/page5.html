@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" class=".no-skrollr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="page5.css">
+       <!--Google Fonts-->
+	 <link rel="preconnect" href="https://fonts.googleapis.com">
+	 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    
+    <title>Part5.소소한 행복</title>
+
+    <script src="https://kit.fontawesome.com/10f8dabd1b.js" crossorigin="anonymous"></script>
+    <script  src="jquery-3.6.0.js"></script>
+    <!-- 모달창 -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script> 
+</head>
+<body>
+    <div class = "wrapper">
+        <img src="img/bg/bgwater.png" alt="배경-물속" class="img"id="bg" width="100%" >
+        <img src="img/bg/bgbottom.png" alt="배경-바닥" class="img" id="bg-bottom" width="100%">
+        <img src="img/bg/rock_shadow.png" alt="돌 그림자" class="img" id="rock-shadow" width="100%" height="70%">
+
+        <div class="small-wrapper">
+            <img src="img/room/bottom.png" alt="바닥" class="img" id="bottom" width="100%">
+            <img src="img/bg/rock1.png" alt="돌" class="img" id="rock1" width="100%">
+
+            <img src="img/bg/bgfish1.png" alt="물고기1" class="img" id="fish1" width="100%">
+            <img src="img/bg/bgfish2.png" alt="물고기2" class="img" id="fish2" width="100%">
+            <img src="img/bg/bgfish3.png" alt="물고기3" class="img" id="fish3" width="100%">
+            <img src="img/bg/bgjellyfish.png" alt="해파리(뒤)" class="img" id="jellyfish2" width="100%">
+            <img src="img/bg/whale2.png" alt="고래(뒤)" class="img" id="whale2" width="100%">
+            <img src="img/bg/star.png" alt="임의 별" class="img" id="star1" width="100%">
+            <!-- <img src="img/bg/star2.png" alt="임의 별" class="img" id="star2" width="100%"> -->
+        </div>
+
+
+        <div class="front-wrapper">
+            <img src="img/room/rock.png" alt="돌" class="img" id="rock" width="100.3%">
+            <img src="img/room/bottom_room_light.png" alt="문 빛" class="img" id="bottom_room_light" width="70%" height="70%">
+            <img src="img/front/fish.png" alt="물고기" class="img" id="fish" width="100%">
+            <img src="img/front/whale.png" alt="고래" class="img" id="whale" width="100%">
+            <img src="img/front/jellyfish.png" alt="해파리" class="img" id="jellyfish" width="100%">
+            <img src="img/room/bottom_room_light.png" alt="빛" class="img" id="bottom_room_light" width="100%">
+            
+            <!-- 모달창 -->
+            <div id="Modal1" class="modal">
+                <div class="modal-content">
+                    <div class="world1"     
+                        style=
+                        "cursor:pointer; 
+                        background-color:rgb(255, 255, 255); 
+                        text-align: center; 
+                        padding: 0px 0px 0px 0px;  ">   
+                        <div class="w1-cutter">   
+                            <img src="img/sky/bgSky.png" alt="하늘" class="w1" id="sky" width="100%" />
+                            <img src="img/sky/airplane.png" alt="비행기" class="w1" id="airplane" width="30%" />
+                            <!-- <img src="img/sky/sentence.png" alt="문구" class="w1" id="sentence1" width="50%" /> -->
+                            <img src="img/sky/cloud_left.png" alt="구름" class="w1" id="cloud_left" width="50%">
+                            <img src="img/sky/cloud_right.png" alt="구름" class="w1" id="cloud_right" width="50%">
+                            <img src="img/sky/smallcloud.png" alt="작은 구름" class="w1" id="small-cloud" width="30%" />
+
+                            <img src="img/sky/tree_back.png" alt="나무_뒤" class="w1" id="tree_back" width="90%" />
+                            <img src="img/sky/tree_front.png" alt="나무_앞" class="w1" id="tree_front" width="90%" />
+
+                            <img src="img/sky/hand.png" alt="손" class="w1" id="hand" width="50%" />
+                            <p>가끔은 창 밖의 하늘을 바라보는건 어떨까요?</p>
+                        </div>
+                    </div>
+               <div class="world1-btn" onClick="close_pop1();">    <!--얘는 close 버튼. 모달 창이랑 따로 만들었다!-->
+                        <span class="pop_bt"> close </span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="Modal2" class="modal">
+                <div class="modal-content">
+                    <!--close 창(modal 안에 style 창 있고, 이 style 안에 그림을 넣어야 해서 이렇게 수정함)-->
+                    <div class="world2"     
+                    style=
+                    "cursor:pointer; 
+                    background-color:rgb(255, 255, 255); 
+                    text-align: center; 
+                    padding: 0px 0px 0px 0px;  ">   <!--얘는 모달 창 내부. 사실 없어도 될 것 같긴 한데 일단 뭔가 필요하겠지 싶어 뒀다-->
+                        <div class="w2_cutter">    <!--얘는 모달 창 내부에 이미지. 이 이미지를 넘는 애들은 안보이게 하려고 이름을 cutter로 지었다.-->
+                            <img src="img/flower/bgSky.png" alt="하늘" class="sky" id="sky" width="100%" />
+                            
+                            <div class="w2_bg_content">     <!--얘는 아무 기능이 없음. 그냥 묶어놓은 용도!-->
+                                <img src="img/flower/cloudL.png" alt="구름L" class="cloudL" id="cloudL" width="60%" />
+                                <img src="img/flower/cloudR.png" alt="구름R" class="cloudR" id="cloudR" width="50%" />
+                                <img src="img/flower/bgGround.png" alt="땅" class="ground" id="ground" width="100%" />
+                                <p>바쁜 일상 속에서 나와 여유를 느껴보는 건 어떨까요?</p>
+                            </div>
+
+                            <div class="w2_flower_content">
+                                <img src="img/flower/crazyFlower/flower(bg1).png" alt="꽃 배경1" class="flower_bg1" id="flower_bg1" width="100%" />
+                                <img src="img/flower/crazyFlower/flower1.png" alt="꽃1" class="flower1" id="flower1" width="18%" />
+                                <img src="img/flower/crazyFlower/flower2.png" alt="꽃2" class="flower2" id="flower2" width="11%" />
+                                <img src="img/flower/crazyFlower/flower3.png" alt="꽃3" class="flower3" id="flower3" width="10%" />
+                                <img src="img/flower/crazyFlower/flower(bg2).png" alt="꽃 배경2" class="flower_bg2" id="flower_bg2" width="18%" />
+                                <img src="img/flower/crazyFlower/flower4.png" alt="꽃4" class="flower4" id="flower4" width="8%" />
+                                <img src="img/flower/crazyFlower/flower5.png" alt="꽃5" class="flower5" id="flower5" width="7%" />
+                                <img src="img/flower/crazyFlower/flower6.png" alt="꽃6" class="flower6" id="flower6" width="7%" />
+                                <img src="img/flower/crazyFlower/flower7.png" alt="꽃7" class="flower7" id="flower7" width="8%" />
+                                <img src="img/flower/crazyFlower/flower8.png" alt="꽃8" class="flower8" id="flower8" width="20%" />
+                                <img src="img/flower/crazyFlower/flower9.png" alt="꽃9" class="flower9" id="flower9" width="9%" />
+                                <img src="img/flower/crazyFlower/flower10.png" alt="꽃10" class="flower10" id="flower10" width="11%" />
+                                <img src="img/flower/crazyFlower/flower11.png" alt="꽃11" class="flower11" id="flower11" width="9%" />
+                                <img src="img/flower/crazyFlower/flower12.png" alt="꽃12" class="flower12" id="flower12" width="9%" />
+                                <img src="img/flower/crazyFlower/flower13.png" alt="꽃13" class="flower13" id="flower13" width="9%" />
+                                <img src="img/flower/crazyFlower/flower14.png" alt="꽃14" class="flower14" id="flower14" width="11%" />
+                                <img src="img/flower/crazyFlower/flower15.png" alt="꽃15" class="flower15" id="flower15" width="8%" />
+                                <img src="img/flower/crazyFlower/flower16.png" alt="꽃16" class="flower16" id="flower16" width="15%" />
+                                <img src="img/flower/crazyFlower/flower17.png" alt="꽃17" class="flower17" id="flower17" width="14%" />
+                                <img src="img/flower/crazyFlower/flower18.png" alt="꽃18" class="flower18" id="flower18" width="12%" />
+                                <img src="img/flower/crazyFlower/flower19.png" alt="꽃19" class="flower19" id="flower19" width="12%" />
+                                <img src="img/flower/crazyFlower/flower20.png" alt="꽃20" class="flower20" id="flower20" width="26%" />
+                                <img src="img/flower/crazyFlower/flower21.png" alt="꽃21" class="flower21" id="flower21" width="9%" />
+                                <img src="img/flower/crazyFlower/flower22.png" alt="꽃22" class="flower22" id="flower22" width="30%" />
+                                <img src="img/flower/crazyFlower/flower23.png" alt="꽃23" class="flower23" id="flower23" width="24%" />
+                                <img src="img/flower/crazyFlower/flower24.png" alt="꽃24" class="flower24" id="flower24" width="18%" />
+                                <img src="img/flower/crazyFlower/flower25.png" alt="꽃25" class="flower25" id="flower25" width="13%" />
+                                <img src="img/flower/crazyFlower/flower26.png" alt="꽃26" class="flower26" id="flower26" width="12%" />
+                                <img src="img/flower/crazyFlower/flower27.png" alt="꽃27" class="flower27" id="flower27" width="6%" />
+                                <img src="img/flower/crazyFlower/flower28.png" alt="꽃28" class="flower28" id="flower28" width="6%" />
+                                <img src="img/flower/crazyFlower/flower29.png" alt="꽃29" class="flower29" id="flower29" width="9%" />
+                                <img src="img/flower/crazyFlower/flower30.png" alt="꽃30" class="flower30" id="flower30" width="7%" />
+                                <img src="img/flower/crazyFlower/flower31.png" alt="꽃31" class="flower31" id="flower31" width="6%" />
+                                <img src="img/flower/crazyFlower/flower32.png" alt="꽃32" class="flower32" id="flower32" width="6%" />
+                                <img src="img/flower/crazyFlower/flower33.png" alt="꽃33" class="flower33" id="flower33" width="9.5%" />
+                                <img src="img/flower/crazyFlower/flower34.png" alt="꽃34" class="flower34" id="flower34" width="9%" />
+                                <img src="img/flower/crazyFlower/flower35.png" alt="꽃35" class="flower35" id="flower35" width="8%" />
+                                <img src="img/flower/crazyFlower/flower36.png" alt="꽃36" class="flower36" id="flower36" width="30%" />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="world2-btn" onClick="close_pop2();">    <!--얘는 close 버튼. 모달 창이랑 따로 만들었다!-->
+                        <span class="pop_bt"> close </span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="Modal3" class="modal">
+                <div class="modal-content">
+                    <div class="world3"
+                    style=
+                    "cursor:pointer; 
+                    background-color:rgb(255, 255, 255); 
+                    text-align: center; 
+                    padding: 0px 0px 0px 0px; ">
+                        <div class="w3_cutter">
+                            <img src="img/exercise/bgSky.png" alt="하늘" class="sky" id="sky" width="100%" />
+
+                            <div class="w3_content">
+                                <img src="img/exercise/basketball.png" alt="농구골대" class="basketball" id="basketball" width="50%" />
+                                <img src="img/exercise/basketShadow.png" alt="그림자" class="basket_shadow" id="basket_shadow" width="44%" />
+                                <img src="img/exercise/light.png" alt="빛" class="light" id="light" width="45%" />
+                                <p>운동으로 기분전환 해보는 건 어떨까요?</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="world3-btn" onClick="close_pop3();">                 
+                        <span class="pop_bt"> close </span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="Modal4" class="modal">
+                <div class="modal-content">
+                    <div class="world4"     
+                        style=
+                        "cursor:pointer; 
+                        background-color:rgb(255, 255, 255); 
+                        text-align: center; 
+                        padding: 0px 0px 0px 0px;  ">   
+                        <div class="w4-cutter">   
+                            <img src="img/picnic/grass.png" alt="잔디밭" class="w4" id="grass" width="100%" />
+                            <img src="img/picnic/grass_white.png" alt="잔디 하얀부분" class="w4" id="grass_white" width="100%" />
+                            <img src="img/picnic/shadow_grass.png" alt="그림자" class="w4" id="shadow_grass" width="80%" />
+                            <!-- <img src="img/picnic/sentence.png" alt="문구" class="w4" id="sentence4" width="50%" /> -->
+                            <img src="img/picnic/mat.png" alt="돗자리" class="w4" id="mat" width="100%">
+
+                            <img src="img/picnic/blanket.png" alt="담요" class="w4" id="blanket" width="80%" />
+                            <img src="img/picnic/bread.png" alt="빵" class="w4" id="bread" width="30%">
+                            <!-- <img src="img/picnic/shadow_bread.png" alt="그림자" class="w4" id="shadow_bread" width="30%" /> -->
+                            <!-- <img src="img/picnic/shadow_right.png" alt="그림자" class="w4" id="shadow_right" width="50%" /> -->
+                            <img src="img/picnic/shadow_left.png" alt="그림자" class="w4" id="shadow_left" width="45%" />
+                                
+                            <img src="img/picnic/fruits.png" alt="과일" class="w4" id="fruits" width="40%">
+                            <img src="img/picnic/basket.png" alt="바구니" class="w4" id="basket" width="30%">
+
+                            <img src="img/picnic/small-blanket.png" alt="작은 담요" class="w4" id="small-blanket" width="15%">
+
+                            <img src="img/picnic/tomato1.png" alt="방토1" class="w4" id="tomato1" width="8%" />
+                            <img src="img/picnic/tomato2.png" alt="방토2" class="w4" id="tomato2" width="8%" />
+                            <img src="img/picnic/tomato3.png" alt="방토3" class="w4" id="tomato3" width="8%" />
+                            <img src="img/picnic/tomato4.png" alt="방토4" class="w4" id="tomato4" width="8%" />
+                            <p>오늘 저녁엔 내가 좋아하는 걸 하나 먹는건 어떨까요?</p>
+                        </div>
+                    </div>
+                        
+                    <div class="world4-btn" onClick="close_pop4();">    
+                        <span class="pop_bt"> close </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 모달창 끝 -->
+
+            <div class="stage">
+                <div class="room">
+                    <img src="img/room/room1.png" alt="방1" class="room-body room1" id="room1" width="18.7%" onClick="open_pop1();" style="cursor: pointer;">
+                </div>
+                <div class="room">
+                    <img src="img/room/room2.png" alt="방2" class="room-body room2" id="room2" width="18.7%" onClick="open_pop2();" style="cursor: pointer;">
+                </div>
+                <div class="room">
+                    <img src="img/room/room3.png" alt="방3" class="room-body room3" id="room3" width="18.7%" onClick="open_pop3();" style="cursor: pointer;">
+                </div>
+                <div class="room">
+                    <img src="img/room/room4.png" alt="방4" class="room-body room4" id="room4" width="18.7%" onClick="open_pop4();" style="cursor: pointer;">
+                </div>
+                <div class="room">
+                    <a href="Ending_word.html"><img src="img/room/room_bottom.png" alt="아래방(방5)" class="room-body room5" id="bottom_room" width="19%" style="cursor: pointer;"></a>
+                </div>
+
+                <div class="door">
+                    <img src="img/room/door1.png" alt="문1" class="door-body door1" id="door1" width="19%" style="cursor: pointer;" onClick="door();">
+                </div>
+                <div class="door">
+                    <img src="img/room/door2.png" alt="문2" class="door-body door2" id="door2" width="19%" style="cursor: pointer;" onClick="door();">
+                </div>
+                <div class="door">
+                    <img src="img/room/door3.png" alt="문3" class="door-body door3" id="door3" width="19%" style="cursor: pointer;" onClick="door();">
+                </div>
+                <div class="door">
+                    <img src="img/room/door4.png" alt="문4" class="door-body door4" id="door4" width="19%" style="cursor: pointer;" onClick="door();">
+                </div>
+                <div class="click">
+                    <img src="../click-image/click(black).png" alt="클릭" class="click-icon" id="click" width="2%">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scroll">
+        <img src="../scroll-image/scroll-down(white).png" alt="아래로 스크롤" class="scroll-icon" id="scroll-down" width="10%">
+    </div>
+
+    <!--툴팁-->
+   <div class="exit">
+        <a href="../../Main_Page/entrance.html"><i class="fas fa-arrow-right fa-3x"></i>
+        <div class="tooltip">
+            <h1 class="text" id="text">전시장으로 돌아가기</h1>
+        </div>
+    </div>
+
+    <script>    //문 열리는 애니메이션
+        (function(){
+            const stage = document.querySelector(".stage");
+
+            // 현재 활성화된 아이템을 저장
+            let currentItem;
+
+            function activate(item){
+                item.classList.add('door-opened');
+                currentItem = item;
+            }
+
+            function inactivate(item){
+                item.classList.remove('door-opened');
+            }
+
+            function doorHandler(e){
+                // 부모클래스를 타고 가도록 진행하기(?)
+                let element = e.target;
+                if(currentItem){
+                    inactivate(currentItem);
+                }
+                if(element.classList.contains('door-body')){
+                    activate(element.parentNode);
+                }
+            }
+
+            stage.addEventListener('click', doorHandler);
+
+            // activate(document.querySelector('.door:first-child'));
+        })();
+    </script>
+    
+    <!-- <i id="icon_sound" class="far fa-play-circle fa-3x" onClick="play();"></i> -->
+
+    <script type="text/javascript" src="page5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>   <!--for 음원. internet explorer에서는 적용 안됨-->
+</body>
+</html>

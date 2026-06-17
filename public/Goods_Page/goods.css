@@ -1,0 +1,306 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background :linear-gradient(to bottom, #c9c9c9, #e8e9eb);  /*전체색상 */
+}
+
+/*스크롤바 없애기*/
+body{
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+/* 내부 */
+.section input{
+    display: none;
+}
+
+.section input[id="slide"]{
+    display: none;
+}
+
+.section .slidewrap{
+    max-width: 100%;
+    margin: 0 auto 0 auto;
+    overflow: hidden;
+}
+
+.section .slidelist{
+    white-space: nowrap;
+    font-size: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.section .slidelist ul{
+    margin: 0;
+}
+
+.section .slidelist > li{
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    transition: all .5s;
+}
+
+.section .slidelist > li > a{
+    display: block;
+    position: relative;
+}
+
+.section .slidelist label{
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 50px;
+    cursor: pointer;
+}
+
+.section .slidelist .left{
+    left: 0;
+    background: url("../Main_Page/memo_goods/left.png") center center / 100% no-repeat;
+    margin: 28% 0 0 0;
+    position: absolute;
+}
+
+.section .slidelist .right{
+    right: 0;
+    background: url("../Main_Page/memo_goods/right.png") center center / 100% no-repeat;
+}
+
+.section [id="slide01"]:checked ~ .slidewrap .slidelist > li {transform: translateX(0%);}
+.section [id="slide02"]:checked ~ .slidewrap .slidelist > li {transform: translateX(-100%);}
+.section [id="slide03"]:checked ~ .slidewrap .slidelist > li {transform: translateX(-200%);}
+.section [id="slide04"]:checked ~ .slidewrap .slidelist > li {transform: translateX(-300%);}
+
+
+/* 멘트 배치 및 색상 */
+.ment{
+    position: absolute;
+    margin: -55% 0 0 32.5%;
+    z-index: 5;
+}
+
+p{
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-size: 1rem;
+    white-space: nowrap;
+    width: 100%;
+    margin: 3px;
+    text-align: center;
+}
+
+.ment #title{
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1.2rem;
+}
+
+.ment #explain1{
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-size: 1rem;
+    color: black;
+}
+.ment #explain2{
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-size: 0.8rem;
+    color: gray;
+}
+
+/* 버튼 */
+.btn{
+    position: absolute;
+    margin: -10% 0 0 44%;
+}
+.btn .pop_bt{
+    display: block;
+    font-size: 13pt;
+    text-align: center;
+    margin: 0.5rem auto 0 auto;
+    padding: 0.1rem 3rem 0.1rem 3rem;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    color: gray;
+    background-color: whitesmoke;
+}
+
+a{
+    text-decoration: none;
+}
+
+.btn .pop_bt:hover{
+    border: 1px solid gray;
+    background-color: gray;
+    color: white;
+}
+
+/* 이미지 배치 및 애니메이션 */
+.ment_1{
+    margin: -55% 0 0 32%;
+}
+.board .diary_wrapper .diary{
+    position: absolute;
+    margin: -45% 0 0 32%;
+    animation: up 3s ease-in-out 0s infinite alternate;
+}
+
+.board .diary_wrapper .diary_reflect{
+    position: absolute;
+    margin: -14% 0 0 32%;
+    animation: down 3s ease-in-out 0s infinite alternate;
+}
+
+.ment_2{
+    margin: -55% 0 0 39%;
+}
+.board .calendar_wrapper .calendar_back{
+    position: absolute;
+    margin: -35% 0 0 22%;
+    animation: up 3s ease-in-out 0s infinite alternate;
+}
+
+.board .calendar_wrapper .calendar_phone{
+    position: absolute;
+    margin: -47% 0 0 35%;
+    animation: up 3s ease-in-out 0s infinite alternate;
+}
+
+.board .calendar_wrapper .calendar_reflect{
+    position: absolute;
+    margin: -12% 0 0 22%;
+    animation: down 3s ease-in-out 0s infinite alternate;
+}
+
+.ment_3{
+    margin: -55% 0 0 37%;
+}
+
+.board .postcard_wrapper .postcard{
+    position: absolute;
+    margin: -43% 0 0 12%;
+    animation: up 3s ease-in-out 0s infinite alternate;
+}
+
+.board .postcard_wrapper .postcard_reflect{
+    position: absolute;
+    margin: -25% 0 0 12%;
+    animation: down 3s ease-in-out 0s infinite alternate;
+}
+
+.btn_3{
+    margin: -17% 0 0 44%;
+}
+
+.ment_4{
+    margin: -55% 0 0 36%;
+}
+
+.board .cup_wrapper .cup{
+    position: absolute;
+    margin: -49% 0 0 27%;
+    animation: up 3s ease-in-out 0s infinite alternate;
+}
+
+.board .cup_wrapper .cup_reflect{
+    position: absolute;
+    margin: -25% 0 0 29%;
+    animation: down 3s ease-in-out 0s infinite alternate;
+}
+
+/* 애니메이션 */
+@keyframes up{
+    0%, 100%{
+        transform: translate(0);
+    }
+    50%{
+        transform: translateY(5%);
+    }
+}
+@keyframes down{
+    0%, 100%{
+        transform: translate(0);
+    }
+    50%{
+        transform: translateY(-5%);
+    }
+}
+
+/* 버튼 */
+.fas{
+    position: absolute;
+    margin: -50% 0 0 30%;
+}
+
+/* 미디어쿼리 */
+@media (max-width: 1280px){
+    .ment_1{
+        margin: -55% 0 0 29.5%;
+    }
+    .board .diary_wrapper .diary{
+        position: absolute;
+        margin: -42% 0 0 32%;
+        animation: up 3s ease-in-out 0s infinite alternate;
+    }
+    
+    .board .diary_wrapper .diary_reflect{
+        position: absolute;
+        margin: -11% 0 0 32%;
+        animation: down 3s ease-in-out 0s infinite alternate;
+    }
+
+    .ment_2{
+        margin: -55% 0 0 38%;
+    }
+
+    .ment_3{
+        margin: -55% 0 0 35%;
+    }
+
+    .ment_4{
+        margin: -55% 0 0 38%;
+    }
+}
+
+@media (min-width: 1900px){
+    .ment{
+        position: absolute;
+        margin: -55% 0 0 32.5%;
+        z-index: 5;
+    }
+    
+    p{
+        font-family: 'IBM Plex Sans KR', sans-serif;
+        font-size: 1.5rem;
+        white-space: nowrap;
+        width: 100%;
+        margin: 3px;
+        text-align: center;
+    }
+    
+    .ment #title{
+        font-family: 'IBM Plex Sans KR', sans-serif;
+        font-size: 2rem;
+        font-weight: bold;
+        margin-top: 2rem;
+    }
+    
+    .ment #explain1{
+        font-family: 'IBM Plex Sans KR', sans-serif;
+        font-size: 1.5rem;
+        color: black;
+    }
+    .ment #explain2{
+        font-family: 'IBM Plex Sans KR', sans-serif;
+        font-size: 1rem;
+        color: gray;
+    }
+    
+}

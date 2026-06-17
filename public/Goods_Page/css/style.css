@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: whitesmoke;   /*전체색상 */
+}
+
+@font-face {
+    src: url("../../NanumSquareR.otf");
+    font-family: "NanumSquare";
+}
+
+.navbar {   /*내비게이션 바(로고+메뉴)*/
+    background-color: whitesmoke;
+    height: 120px;
+    padding: 0 50px;
+    position: sticky;   /*상단바 고정*/
+    padding-top: 60px;  /*자연스럽게 줄어들기*/
+    top: -60px;
+    opacity: 0.7;   /*뒤에 비치게 하기*/
+    backdrop-filter: blur(30px);
+}
+
+.navbar #menu {   /*메뉴*/
+    float: right;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar #menu:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.navbar #menu li {
+    padding: 0 20px;    /*hover때문에 간격 줌*/
+    cursor: pointer;
+    float: left;
+    line-height: 60px;
+}
+.navbar #menu li:not(:last-child) {     /*메뉴 간 간격 띄우기*/
+    margin-right: 40px;
+}
+
+.navbar #menu li:hover {    /*마우스 커서 올리면 gray색*/
+    background-color: gray;
+}
+
+.navbar #menu li a {    /*메뉴이름 속성*/
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: "NanumSquare";
+}
+
+/* 여기까지 navbar */
+/* 아래가 본격 굿즈페이지! */
+.hero-header{
+    height: 450px;
+    background-image: url("../images/heroheader.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-position: center center; */
+}
+
+.product-list{
+    width: 735px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.products h3 {
+    font-family: "NanumSquare";
+    font-size: 24px;
+    color: black;
+    margin-top: 200px;
+    margin-bottom: 200px;
+    text-align: center;
+}
+
+.product{
+    display: block;
+    float: left;
+    width: 225px;
+    color: black;
+    font-family: "NanumSquare";
+    text-decoration: none;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 100px;
+}
+
+.product .product-name{
+    font-family: "NanumSquare";
+    margin-top: 20px;
+    margin-bottom: 4px;
+}
+
+.product .product-icons{
+    font-family: "NanumSquare";
+    margin-top: 20px;
+    color: gray;
+}
+
+.clearfix{
+    clear: both;
+}

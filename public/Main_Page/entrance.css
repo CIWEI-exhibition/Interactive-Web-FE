@@ -1,0 +1,613 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #d2d2d2;   /*전체색상 */
+}
+
+/*스크롤바 없애기*/
+body{
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* 내부 */
+.section input{
+    display: none;
+}
+
+.section input[id="slide"]{
+    display: none;
+}
+
+.section .slidewrap{
+    max-width: 100%;
+    margin: 0 auto 0 auto;
+    overflow: hidden;
+}
+
+.section .slidelist{
+    white-space: nowrap;
+    font-size: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.section .slidelist ul{
+    margin: 0;
+}
+
+.section .slidelist > li{
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    transition: all .5s;
+}
+
+.section .slidelist > li > a{
+    display: block;
+    position: relative;
+}
+
+.section .slidelist label{
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 50px;
+    cursor: pointer;
+}
+
+.section .slidelist .left{
+    left: 0;
+    background: url("memo_goods/left.png") center center / 100% no-repeat;
+    margin: 28% 0 0 0;
+}
+
+.section .slidelist .right{
+    right: 0;
+    background: url("memo_goods/right.png") center center / 100% no-repeat;
+}
+
+.section [id="slide01"]:checked ~ .slidewrap .slidelist > li {transform: translateX(0%);}
+.section [id="slide02"]:checked ~ .slidewrap .slidelist > li {transform: translateX(-100%);}
+.section [id="slide03"]:checked ~ .slidewrap .slidelist > li {transform: translateX(-200%);}
+
+
+/*첫번째(개인전시)이미지 배치*/
+.indiv .light{
+    position: absolute;
+    margin: -50% 0 0 0;
+}
+/*채원*/
+.indiv .mockup .chaewon .chaewon_1{
+    position: absolute;
+    margin: -37% 0 0 7%;
+}
+.indiv .mockup .chaewon .chaewon_2{
+    position: absolute;
+    margin: -39% 0 0 14%;
+}
+.indiv .mockup .chaewon .chaewon_3{
+    position: absolute;
+    margin: -30% 0 0 8%;
+}
+.indiv .mockup .chaewon .chaewon_4{
+    position: absolute;
+    margin: -32% 0 0 15%;
+}
+.indiv .mockup .chaewon .chaewon_explain{
+    position: absolute;
+    margin: -35% 0 0 24%;
+}
+/*예나*/
+.indiv .mockup .yena .yena_1{
+    position: absolute;
+    margin: -37% 0 0 37%;
+}
+.indiv .mockup .yena .yena_2{
+    position: absolute;
+    margin: -39% 0 0 44%;
+}
+.indiv .mockup .yena .yena_3{
+    position: absolute;
+    margin: -30% 0 0 38%;
+}
+.indiv .mockup .yena .yena_4{
+    position: absolute;
+    margin: -32% 0 0 45%;
+}
+.indiv .mockup .yena .yena_explain{
+    position: absolute;
+    margin: -35% 0 0 54%;
+}
+/*지영*/
+.indiv .mockup .jiyoung .jiyoung_1{
+    position: absolute;
+    margin: -37% 0 0 68%;
+}
+.indiv .mockup .jiyoung .jiyoung_2{
+    position: absolute;
+    margin: -39% 0 0 75%;
+}
+.indiv .mockup .jiyoung .jiyoung_3{
+    position: absolute;
+    margin: -30% 0 0 69%;
+}
+.indiv .mockup .jiyoung .jiyoung_4{
+    position: absolute;
+    margin: -32% 0 0 76%;
+}
+.indiv .mockup .jiyoung .jiyoung_explain{
+    position: absolute;
+    margin: -35% 0 0 85%;
+}
+
+/*모달*/
+.Modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+    z-index:100000000;
+    opacity: 90%;
+}
+
+.Art {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 5%;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+    z-index:100000000;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 1% 2% 1% 2%;
+    border: 1px solid #888;
+    border-radius: 30px;     
+    justify-content:center; 
+    align-items:center;
+    animation: appear .8s cubic-bezier(.77,0,.175,1) forwards;                   
+}
+
+.modal-content .top{
+    margin-bottom: 0.7rem;
+}
+
+/* 모달창 크기, 위치 설정 */
+.Modal .ch{
+    width: 30%;
+    margin: 10% auto auto 35%; /* 15% from the top and centered */
+}
+.Art .ch{
+    width: 33%;
+    margin: 9% auto auto 33%; /* 15% from the top and centered */
+}
+.Modal .yn{
+    width: 20%; /* Could be more or less, depending on screen size */
+    margin: 3% auto 5% 40%; /* 15% from the top and centered */  
+}
+.Art .yn{
+    width: 20%; /* Could be more or less, depending on screen size */
+    margin: 8% auto 5% 39%; /* 15% from the top and centered */  
+}
+.Modal .jy{
+    width: 30%;
+    margin: 10% auto auto 35%; /* 15% from the top and centered */
+}
+.Art .jy{
+    width: 30%;
+    margin: 10% auto auto 35%; /* 15% from the top and centered */
+}
+.Modal .explain{        /*개인전시 설명문*/
+    width: 25%;
+    padding: 15px 5% 3px 5%;
+    margin: 15% auto auto 37%;
+}
+.Modal .explain2{       /*굿즈 설명문*/
+    width: 30%;
+    padding: 3rem;
+    margin: 15% auto auto 37%;
+}
+.Modal .modal_goods{
+    /* background-color: white; */
+    width: 30%;
+    padding: 3rem;
+    margin: 15% auto auto 37%;
+}
+
+@keyframes appear {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+/*모달창 내부 글 설정*/
+.modal-content p{
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-size: 1rem;
+    white-space: nowrap;
+    margin: 0;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+
+.modal-content #title{
+    font-weight: bold;
+    margin-top: 1rem;
+}
+.modal-content #name{
+    font-weight: 100;
+    font-size: 0.5rem;
+}
+.modal-content #explain{
+    font-size: 0.8rem;
+    color: gray;
+}
+.modal-content #explain2{
+    font-size: 0.8rem;
+    color: gray;
+    padding: 1rem;
+}
+
+.Modal #link p:hover{
+    cursor: pointer;
+    color: black;
+}
+
+/* 굿즈 전광판 */
+.memo_goods #left{
+    position: absolute;
+    margin: 24% 0 0 27%;
+}
+
+.memo_goods #right{
+    position: absolute;
+    margin: -19.3% 27% 0 0;
+}
+
+.memo_goods .diary_reflect{
+    width: 65%;
+    position: absolute;
+    margin: 49.5% 0 0 0;
+}
+
+.memo_goods .calendar{
+    width: 80%;
+    position: absolute;
+    margin: 25% 0 0 -8%;
+    z-index: -1;
+}
+
+.memo_goods .calendar_reflect{
+    width: 120%;
+    position: absolute;
+    margin: 64% 0 0 -94%;
+}
+
+.memo_goods .postcard_reflect{
+    width: 65%;
+    position: absolute;
+    margin: 13% 0 0 -65%;
+}
+
+.memo_goods .cup_reflect{
+    width: 65%;
+    position: absolute;
+    margin: 21% 0 0 -67%;
+}
+/* 전시 소개 */
+
+@media (max-width: 1280px){      /* pc */
+    .Explain {
+        width: 50%;
+        background-color: #fefefed8;
+        padding: 3% 2% 3% 8%;
+        margin: 8% auto auto 25%;
+        border-radius: 30px;     
+        justify-content:center; 
+        align-items:center;
+        animation: appear .8s cubic-bezier(.77,0,.175,1) forwards;                   
+    }
+    .btn{
+        margin: auto auto auto 28%;
+        width: 30%;
+    }
+    .btn_p{
+        margin: 8% 0 2% 5%;
+    }
+}
+
+@media (min-width: 1281px) and (max-width: 1440px){
+    .Explain {
+        width: 50%;
+        background-color: #fefefed8;
+        padding: 3% 2% 3% 8%;
+        margin: 8% auto auto 25%;
+        border-radius: 30px;     
+        justify-content:center; 
+        align-items:center;
+        animation: appear .8s cubic-bezier(.77,0,.175,1) forwards;                   
+    }
+    .btn{
+        margin: auto auto auto 28%;
+        width: 30%;
+    }
+    .btn_p{
+        margin: 8% 0 2% 5%;
+    }
+}
+
+@media (min-width: 1440px) and (max-width: 1900px){     /*pc 3(15인치, 데탑)*/
+    .Explain {
+        width: 43%;
+        background-color: #fefefed8;
+        padding: 3% 2% 3% 7%;
+        margin: 8% auto auto 30%;
+        border-radius: 30px;     
+        justify-content:center; 
+        align-items:center;
+        animation: appear .8s cubic-bezier(.77,0,.175,1) forwards;                   
+    }
+    .btn{
+        margin: auto auto auto 28%;
+        width: 30%;
+    }
+    .btn_p{
+        margin: 8% 0 2% 5%;
+    }
+}
+
+@media (min-width: 1900px){     /*pc 4(완전 와이드스크린)*/
+    .Explain {
+        width: 40%;
+        background-color: #fefefed8;
+        padding: 3% 2% 3% 8%;
+        margin: 8% auto auto 30%;
+        border-radius: 30px;     
+        justify-content:center; 
+        align-items:center;
+        animation: appear .8s cubic-bezier(.77,0,.175,1) forwards;                   
+    }
+    .btn{
+        margin: auto auto auto 23%;
+        width: 30%;
+    }
+    .btn_p{
+        margin: 8% 0 2% 5%;
+    }
+}
+
+.Explain .p{
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-size: 1rem;
+    white-space: nowrap;
+    width: 100%;
+    margin: 3px;
+    text-align: left;
+}
+.Explain #title{
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1.2rem;
+}
+.Explain #subtitle{
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: gray;
+}
+.Explain #script{
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-size: 0.8rem;
+}
+.Explain #explain{
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-size: 0.7rem;
+    color: gray;
+}
+
+.Explain .pop_bt{
+    display: block;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-size: 13pt;
+    text-align: center;
+    /* margin: 0.5rem 0 0 -100%;  */
+    padding: 0.2px;
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.Explain .pop_bt:hover{
+    background-color: gray;
+    color: white;
+}
+
+/* .btn{
+    background-color: #b7c4dd;
+    border: 0;
+    outline: none;
+    border-radius: 7px;
+    box-shadow: 2px 2px 2px rgb(202, 202, 202), -2px -2px 2px rgb(237, 237, 237);
+    transition: 0.3s;
+    margin: 0% 40% -5% 40%;
+    padding: 5px 10px 5px 21px;
+    text-align: center;
+    cursor: pointer;
+} */
+
+.modal-content .pop_bt{
+    display: block;
+    font-size: 13pt;
+    text-align: center;
+    margin: 0.5rem auto 0 auto;
+    padding: 0.1rem 3rem 0.1rem 3rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.pop_bt{
+    text-align: center;
+}
+
+span{
+    text-align: center;
+}
+
+.modal-content .pop_bt:hover{
+    background-color: gray;
+    color: white;
+}
+
+/*가운데(본전시)이미지 배치*/
+
+.enter .exit .logo{
+    position: absolute;
+    margin: -42% 0 0 35.5%;
+}
+
+.enter .light{
+    position: absolute;
+    margin: -70% 0 0 0;
+}
+
+.enter .art_wrapper .art1{
+    position: absolute;
+    margin: -32% 0 0 5.5%;
+}
+
+.enter .art_wrapper .board1{
+    position: absolute;
+    margin: -29% 0 0 17.5%;
+}
+
+.enter .art_wrapper .art2{
+    position: absolute;
+    margin: -32% 0 0 23.5%;
+}
+
+.enter .art_wrapper .board2{
+    position: absolute;
+    margin: -29% 0 0 35.5%;
+}
+
+.enter .art_wrapper .art3{
+    position: absolute;
+    margin: -32% 0 0 41.5%;
+}
+
+.enter .art_wrapper .board3{
+    position: absolute;
+    margin: -29% 0 0 53.5%;
+}
+
+.enter .art_wrapper .art4{
+    position: absolute;
+    margin: -32% 0 0 59.5%;
+}
+
+.enter .art_wrapper .board4{
+    position: absolute;
+    margin: -29% 0 0 71.5%;
+}
+
+
+.enter .art_wrapper .art5{
+    position: absolute;
+    margin: -32% 0 0 77.5%;
+}
+
+.enter .art_wrapper .board5{
+    position: absolute;
+    margin: -29% 0 0 89.5%;
+}
+
+/* 세번째(게시판&굿즈) 이미지 배치*/
+.memo .light{
+    position: absolute;
+    margin: -70% 0 0 0;
+}
+
+.memo .below{
+    position: absolute;
+    margin: -43.6% 0 0 8.5%;
+}
+
+.memo .text{
+    position: absolute;
+    margin: -40.5% 0 0 28%;
+}
+
+.memo .board{
+    position: absolute;
+    margin: -36% 0 0 7%;
+}
+
+.memo .postit1{
+    position: absolute;
+    margin: -34% 0 0 20%;
+}
+.memo .postit2{
+    position: absolute;
+    margin: -30% 0 0 40%
+}
+.memo .postit3{
+    position: absolute;
+    margin: -34% 0 0 35%;
+}
+.memo .postit4{
+    position: absolute;
+    margin: -27% 0 0 15%;
+}
+.memo .postit5{
+    position: absolute;
+    margin: -30% 0 0 28%;
+}
+.memo .postit6{
+    position: absolute;
+}
+
+.goods .comfort{
+    position: absolute;
+    margin: -39% 0 0 68%;
+}
+
+.goods .goodsText{
+    position: absolute;
+    margin: -33.5% 0 0 83%;
+}
+
+.goods .goodsBoard{
+    position: absolute;
+    margin: -34% 0 0 50%;
+}
