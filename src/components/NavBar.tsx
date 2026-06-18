@@ -2,7 +2,6 @@ import { Link, useLocation } from 'react-router-dom'
 
 const REACT_NAV = [
   { path: '/', label: 'EXHIBITION' },
-  { path: '/memo', label: 'MEMO' },
 ]
 
 export default function NavBar() {
@@ -32,6 +31,11 @@ export default function NavBar() {
         <li>
           <a href="/Goods_Page/goods.html" className="text-xs tracking-widest text-white/40 hover:text-white/70 transition-colors">
             GOODS
+          </a>
+        </li>
+        <li>
+          <a href="/Community_Page/note.html" className="text-xs tracking-widest text-white/40 hover:text-white/70 transition-colors">
+            MEMO
           </a>
         </li>
         {isAdmin && (
